@@ -23,10 +23,10 @@ const options = {
             selectedDatesCounter=selectedDates[0];
             if ((selectedDates[0]-dateNow)<0){
                 window.alert("Please choose a date in the future");
-                refs.startButton.setAttribute('disabled', true);
+                cons.startButton.setAttribute('disabled', true);
             }
             else {
-                refs.startButton.removeAttribute('disabled');
+              cons.startButton.removeAttribute('disabled');
             }
         }
         
@@ -38,10 +38,10 @@ const options = {
     const timerId = setInterval(() => {
         if (selectedDatesCounter-Date.now()>0){
           unformattingDate = selectedDatesCounter-Date.now();
-          refs.dataDays.textContent=addLeadingZero(convertMs(unformattingDate).days);
-          refs.dataHours.textContent=addLeadingZero(convertMs(unformattingDate).hours);
-          refs.dataMinutes.textContent=addLeadingZero(convertMs(unformattingDate).minutes);
-          refs.dataSeconds.textContent=addLeadingZero(convertMs(unformattingDate).seconds);
+          cons.dataDays.textContent=addLeadingZero(convertMs(unformattingDate).days);
+          cons.dataHours.textContent=addLeadingZero(convertMs(unformattingDate).hours);
+          cons.dataMinutes.textContent=addLeadingZero(convertMs(unformattingDate).minutes);
+          cons.dataSeconds.textContent=addLeadingZero(convertMs(unformattingDate).seconds);
         }
         
     
@@ -53,7 +53,7 @@ const options = {
       if (!operationsFlag){
         operationsFlag=true;
         timerStarter();
-        refs.startButton.setAttribute('disabled', true);
+        cons.startButton.setAttribute('disabled', true);
       }
       else {
         clearTimeout(timerId);
